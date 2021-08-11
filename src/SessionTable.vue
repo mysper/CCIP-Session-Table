@@ -255,7 +255,7 @@ export default class CCIPSessionTable extends Vue {
     session: ISession
   ): { start: IRoom['id']; end?: IRoom['id'] } {
     // Broadcast Process
-    if (session.broadcast && typeof session.broadcast !== 'undefined') {
+    if (session.broadcast && typeof session.broadcast !== 'undefined' && session.broadcast.length !== 0) {
       let broadcastSet: IRoom['id'][] = session.broadcast;
       if (!_.isEqual(this.sessionData.rooms, this.rooms)) {
         // Handle custom room index
